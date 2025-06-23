@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite ID Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ELITE ID GENERATOR</h1>
+
+        <div class="form-group">
+            <label for="name">Agent Name</label>
+            <input type="text" id="name" placeholder="Enter full name">
+        </div>
+
+        <div class="form-group">
+            <label for="gameId">Callsign</label>
+            <input type="text" id="gameId" placeholder="Enter agent callsign">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email (Optional)</label>
+            <input type="email" id="email" placeholder="Enter email to receive ID">
+        </div>
+
+        <div class="form-group">
+            <label>ID Card Style</label>
+            <div class="bg-options">
+                <div class="bg-option selected" data-bg="default">Standard Issue</div>
+                <div class="bg-option" data-bg="custom">Custom Design</div>
+            </div>
+
+            <div id="customBgGroup">
+                <label for="customBg" class="upload-btn">Upload Background</label>
+                <input type="file" id="customBg" accept="image/*">
+                <img id="customImagePreview">
+            </div>
+        </div>
+
+        <button id="generateBtn">GENERATE ID</button>
+
+        <div class="result-container" id="resultContainer">
+            <h2>YOUR ELITE ID</h2>
+            <canvas id="idCanvas" width="800" height="400"></canvas>
+            <div class="id-display" id="idDisplay"></div>
+            <div class="action-buttons">
+                <button class="download-btn" id="downloadBtn">DOWNLOAD</button>
+                <button class="copy-btn" id="copyBtn">COPY ID</button>
+                <button class="finish-btn" id="finishBtn">FINISH</button>
+            </div>
+        </div>
+
+        <div class="end-screen" id="endScreen">
+            <h2>MISSION COMPLETE</h2>
+            <p>Your Elite ID has been successfully generated and stored in our secure database.</p>
+            <div class="final-id" id="finalId"></div>
+            <button class="restart-btn" id="restartBtn">GENERATE NEW ID</button>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
+
